@@ -37,7 +37,7 @@ Like most testing frameworks, test cases are defined in spec files. Create a new
 
 The gist of a Frisby test case is that you first describe the test, create some form of HTTP request (GET, POST, etc.), define some expectations about the response, and then "toss the frisby" to execute the test.
 
-One of the really nice things Frisby provides is the ability to chain multiple expectations about a response together into one overall test case. Frisby also provides [several nice built-in matchers](http://frisbyjs.com/docs/api/) for things you will commonly want to test, all built on Jasmine. You can also use most of Jasmine's matcher functionaliy, but more on that later.
+One of the really nice things Frisby provides is the ability to chain multiple expectations about a response together into one overall test case. Frisby also provides [several nice built-in matchers](http://frisbyjs.com/docs/api/) for things you will commonly want to test, all built on Jasmine. You can also use most of Jasmine's built-in matcher functionality, but more on that later.
 
 Let's add a simple test to our spec:
 
