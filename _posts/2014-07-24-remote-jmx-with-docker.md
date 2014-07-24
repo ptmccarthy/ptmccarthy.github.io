@@ -18,6 +18,8 @@ CATALINA_OPTS="${CATALINA_OPTS} -Dcom.sun.management.jmxremote.port=1898 -Dcom.s
 CATALINA_OPTS="${CATALINA_OPTS} -Djava.rmi.server.hostname=10.8.1.106"
 ```
 
+Note: This configuration is strictly for dev environments so authentication and SSL are disabled. Don't do this in production!!
+
 At this point, if you were going to connect a debugger or JConsole on the same host that Tomcat runs on you'd probably be in good shape.
 
 But we're using Docker to run our Tomcat instance inside of a container. There are [pretty good docs available](https://docs.docker.com/userguide/) for Docker over on their web site, so I'll leave out that bit. I'm going to assume you already have a Tomcat Docker image set up and ready to go. For example, mapping 2022 to 22 (for SSH), 8080 for Tomcat, 1898 for JMX, and 62911 for JDWP during container creation looks like:
