@@ -26,7 +26,7 @@ But we're using Docker to run our Tomcat instance inside of a container. There a
 
 An important Docker-related note about the Tomcat configuration above is that the `-Djava.rmi.server.hostname` must be set to the *externally accessible* IP address of the Tomcat server. You want to use the address of the Docker host, *not* the Docker-assigned internal IP address.
 
-For example, mapping 2022 to 22 (for SSH), 8080 for Tomcat, 1898 for JMX, and 62911 for JDWP during container creation looks like:
+When we run our Docker Tomcat image to create the container we map the ports we want forwarded from the Docker host to the container. For example, mapping 2022 to 22 for SSH (because we want to leave 22 for the Docker host), 8080 for Tomcat, 1898 for JMX, and 62911 for JDWP looks like:
 
 ```
 docker run -d -p 2022:22 -p 8080:8080 -p 1898:1898 -p 62911:62911 <image_id>
