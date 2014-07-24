@@ -38,7 +38,7 @@ So now you think everything would be peachy. Your ports are all mapped, your app
 
 As it turns out, sun.management.jmxremote *dynamically assigns a second port to use for [RMI](http://en.wikipedia.org/wiki/Java_remote_method_invocation)*. A well-configured firewall is probably smart enough to handle it, as I assume the connection on this new, dynamically assigned port is initiated as an outbound connection at first. Docker, however, does not seem to be as smart. Docker needs to know all of its port mappings at `docker run` time, and can't map additional ports later. So this is a big problem for us.
 
-As it turns out, after many hours of head-banging, troubleshooting, searching, and basically thinking I was going insane, there is a scantly-mentioned configuration option that was introduced in Java version 7u4 that allows you to override the random RMI port. Not only can you assign a static port, you can also assign it to the same port that JMX listens on for convenience.
+After many hours of head-banging, troubleshooting, searching, and basically thinking I was going insane, there is a scantly-mentioned configuration option that was introduced in Java version 7u4 that allows you to override the random RMI port. Not only can you assign a static port, you can also assign it to the same port that JMX listens on for convenience.
 
 The magic secret sauce is:
 
