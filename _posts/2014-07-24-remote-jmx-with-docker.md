@@ -22,7 +22,9 @@ Note: This configuration is strictly for dev environments so authentication and 
 
 At this point, if you were going to connect a debugger or JConsole on the same host that Tomcat runs on you'd probably be in good shape.
 
-But we're using Docker to run our Tomcat instance inside of a container. There are [pretty good docs available](https://docs.docker.com/userguide/) for Docker over on their web site, so I'll leave out that bit. I'm going to assume you already have a Tomcat Docker image set up and ready to go. For example, mapping 2022 to 22 (for SSH), 8080 for Tomcat, 1898 for JMX, and 62911 for JDWP during container creation looks like:
+But we're using Docker to run our Tomcat instance inside of a container. There are [pretty good docs available](https://docs.docker.com/userguide/) for Docker over on their web site, so I'll leave out that bit. I'm going to assume you already have a Tomcat Docker image set up and ready to go.
+
+For example, mapping 2022 to 22 (for SSH), 8080 for Tomcat, 1898 for JMX, and 62911 for JDWP during container creation looks like:
 
 ```
 docker run -d -p 2022:22 -p 8080:8080 -p 1898:1898 -p 62911:62911 <image_id>
