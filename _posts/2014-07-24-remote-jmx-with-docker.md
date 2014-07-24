@@ -24,6 +24,8 @@ At this point, if you were going to connect a debugger or JConsole on the same h
 
 But we're using Docker to run our Tomcat instance inside of a container. There are [pretty good docs available](https://docs.docker.com/userguide/) for Docker over on their web site, so I'll leave out that bit. I'm going to assume you already have a Tomcat Docker image set up and ready to go.
 
+An important Docker-related note about the Tomcat configuration above is that the `Djava.rmi.server.hostname` must be set to the *externally accessible* IP address of the Tomcat server. You want to use the address of the Docker host, *not* the Docker-assigned internal IP address.
+
 For example, mapping 2022 to 22 (for SSH), 8080 for Tomcat, 1898 for JMX, and 62911 for JDWP during container creation looks like:
 
 ```
