@@ -10,7 +10,7 @@ title:            Patrick McCarthy
 tagline:          A blog
 url:              http://ptmccarthy.github.io
 paginate:         1
-baseurl:          /
+baseurl:          http://ptmccarthy.github.io/
 author:
   name:           Patrick McCarthy
   url:            https://twitter.com/ptmccarthy
