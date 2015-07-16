@@ -1,22 +1,30 @@
-# Dependencies
-markdown:         redcarpet
-pygments:         true
-
 # Permalinks
-permalink:        pretty
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+relative_permalinks: true
 
 # Setup
-title:            Patrick McCarthy
-tagline:          A blog
-url:              http://ptmccarthy.github.io
-paginate:         1
-baseurl:          http://ptmccarthy.github.io/
+title:               Patrick McCarthy
+tagline:             A blog
+url:                 http://ptmccarthy.github.io/
+paginate:            1
+baseurl:             ""
+
+# Assets
+#
+# We specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+# About/contact
 author:
-  name:           Patrick McCarthy
-  url:            https://twitter.com/ptmccarthy
-  email:          
+  name:              Patrick McCarthy 
+  url:               https://twitter.com/ptmcca
+  email:             
 
 # Custom vars
-version:          1.0.0
+version:             2.0.0
 github:
-  repo:           https://github.com/poole/poole
+  repo:              https://github.com/poole/poole
