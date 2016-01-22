@@ -23,7 +23,7 @@ Turns out that these bundlers still assume a baseline of system libraries. In *m
 
 My `setup.py` that produces working bundles ultimately ended up looking like this:
 
-{% highlight python %}
+``` python
 from cx_Freeze import setup, Executable
 
 # Dependencies are automatically detected, but some modules need help.
@@ -59,6 +59,6 @@ setup(
     options = dict(build_exe = buildOptions),
     executables = executables
 )
-{% endhighlight %}
+```
 
 Running the build is as simple as `python setup.py build`. I can then move the resulting build artifact directory to my target environment and run it successfully as a plain executable binary with `./sample-app`!
