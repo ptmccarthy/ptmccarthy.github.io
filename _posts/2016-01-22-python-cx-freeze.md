@@ -17,7 +17,7 @@ cx_Freeze takes advantage of Python's `setuptools`, which requires a `setup.py` 
 
 While cx_Freeze mostly auto-resolves dependencies, Flask apps need a little bit of extra hinting to pull in everything necessary. Notably, `jinja2`, `jinja2.ext`, and `email` did not get automatically resolved for me and were causing my bundled application to crash.
 
-Additionally, there is a big caveat to the "self-contained" nature of bundlers like cx_Freeze (and others like PyInstaller, etc.): **they are not actually 100% self-contained**!
+Additionally, there is a big caveat to the "self-contained" nature of bundlers like cx_Freeze (and others like PyInstaller, etc.): **they are not actually 100% self-contained!**
 
 Turns out that these bundlers still assume a baseline of system libraries. In *most* cases where you are running a "normal" Linux distribution they will be available. But my case was one of the exceptions. Because of the unusual constraints of my target environment, certain expected system C libraries were not available so I had to manually include them through the use of the `bin_includes` directive.
 
