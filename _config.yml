@@ -1,8 +1,5 @@
 # Permalinks
-#
-# Use of `relative_permalinks` ensures post links from the index work properly.
 permalink:           pretty
-relative_permalinks: true
 
 # Setup
 title:               Patrick McCarthy
@@ -10,9 +7,10 @@ tagline:             A blog
 url:                 http://ptmccarthy.github.io/
 paginate:            1
 baseurl:             ""
-markdown:            redcarpet
-redcarpet:
-  extensions: [ "no_intra_emphasis" ]
+markdown:            kramdown
+kramdown:
+  input: GFM
+gems:               ['jekyll-paginate']
 
 # Assets
 #
