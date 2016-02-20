@@ -7,7 +7,7 @@ We've jumped on board the [Docker.io](https://www.docker.io) bandwagon at work, 
 
 ### The Problem
 
-Tomcat6 relies on remote [JMX](http://en.wikipedia.org/wiki/Java_Management_Extensions) and [JDWP](http://docs.oracle.com/javase/7/docs/technotes/guides/jpda/jdwp-spec.html) being configured both within Tomcat and that its ports be accessible through the network stack. No surprises, typical port-forwarding business. 
+Tomcat6 relies on remote [JMX](http://en.wikipedia.org/wiki/Java_Management_Extensions) and [JDWP](http://docs.oracle.com/javase/7/docs/technotes/guides/jpda/jdwp-spec.html) being configured both within Tomcat and that its ports be accessible through the network stack. No surprises, typical port-forwarding business.
 
 Following typical configuration advice that can be found all over the web, we can configure JMX and JDWP for Tomcat in `/etc/sysconfig/tomcat6`
 
@@ -51,8 +51,11 @@ Which, when added to the rest of the options, looks like
 ```
 CATALINA_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,address=62911,server=y,suspend=n"
 CATALINA_OPTS="${CATALINA_OPTS} -Dcom.sun.management.jmxremote="
-CATALINA_OPTS="${CATALINA_OPTS} -Dcom.sun.management.jmxremote.port=1898 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false"
+CATALINA_OPTS="${CATALINA_OPTS} -Dcom.sun.management.jmxremote.port=1898 -Dcom.sun.management.jmxremote.rmi.port=1898 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false"
 CATALINA_OPTS="${CATALINA_OPTS} -Djava.rmi.server.hostname=10.8.1.106"
 ```
 
 At last, JConsole and Intellij can connect to a remote Tomcat server running in a Docker container.
+
+
+*2016-02-19 Note: Fixed an error in the final configuration snippet pointed out by Mathieu Denis. Thanks!*
