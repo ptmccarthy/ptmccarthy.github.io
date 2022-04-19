@@ -6,4 +6,6 @@ Generated using [Jekyll](https://github.com/jekyll/jekyll) and [Poole](https://g
 
 ### Dev Notes
 
+Install `bundle install --path vendor/bundle`
+
 Run `bundle exec jekyll serve` to build and serve locally.
